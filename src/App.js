@@ -4,6 +4,8 @@ import { CardList } from "./component/card-list/card-list.component.jsx";
 
 import "./App.css";
 
+import { SearchBox } from "./component/searchbox/search-box.component";
+
 class App extends Component {
   constructor() {
     super();
@@ -29,10 +31,10 @@ class App extends Component {
     );
     return (
       <div className="App">
-        <input
-          type="search"
-          placeholder="search monsters"
-          onChange={(e) => this.setState({ searchField: e.target.value })}
+        <h1> Monster Rolodex</h1>
+        <SearchBox
+          placeholder="Search Monsters"
+          handleChange={(e) => this.setState({ searchField: e.target.value })}
         />
         <CardList monsters={filteredMonsters} />
       </div>
